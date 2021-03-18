@@ -31,7 +31,7 @@ var server = http.createServer(function(request, response){
       '.png': 'image/png',
       '.jpg': 'image/jpg'
   }
-  const suffix = path.substring(path.indexOf('.'));
+  const suffix = path.substring(path.lastIndexOf('.'));
   console.log('suffix', suffix);
   response.setHeader('Content-Type', `${fileType[suffix] || 'text/html'};charset=utf-8`)
   let string;
